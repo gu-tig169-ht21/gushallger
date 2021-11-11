@@ -35,8 +35,9 @@ class MainView extends StatelessWidget {
           //image(),
           item("Handla mjölk", true),
           item("Studera med todd", false),
-          item("Handla Mjölk", true),
+          item("Handla Mjölk", false),
           item("Läsa på om Flutter", true),
+          item("Lämna in på GitHub", true),
         ]),
       ),
     );
