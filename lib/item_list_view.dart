@@ -41,9 +41,10 @@ class ItemListView extends StatelessWidget {
               context,
               MaterialPageRoute(
                   builder: (context) => AddTodo(
-                      todo: TodoItem(attGora: "Lägg till Todo", done: false))));
+                      todo:
+                          TodoItem(attGora: "", done: false, id: "temp id"))));
           if (newSak != null) {
-            Provider.of<MyState>(context, listen: false).addTodo(newSak);
+            Provider.of<MyState>(context, listen: false).addItem(newSak);
           }
         },
       ),
