@@ -39,13 +39,13 @@ class MyState extends ChangeNotifier {
   String get filterBy => _filterBy;
 
   Future fetchTodo() async {
-    List<TodoItem> lista = await ApiPage.fetchTodo();
+    List<TodoItem> lista = await Api.fetchTodo();
     list = lista;
     notifyListeners();
   }
 
   void addItem(TodoItem sak) async {
-    await ApiPage.addTodo(sak);
+    await Api.addTodo(sak);
     await fetchTodo();
     notifyListeners();
   }
@@ -56,14 +56,14 @@ class MyState extends ChangeNotifier {
   }
 
   void removeItem(TodoItem sak) async {
-    await ApiPage.deleteTodos(sak.id);
+    await Api.deleteTodos(sak.id);
     await fetchTodo();
     notifyListeners();
   }
 
   void changeState(TodoItem sak, bool done) async {
     sak.done = !sak.done;
-    await ApiPage.updateTodos(sak, sak.id);
+    await Api.updateTodos(sak, sak.id);
     await fetchTodo();
   }
 

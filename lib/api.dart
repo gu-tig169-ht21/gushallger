@@ -7,11 +7,7 @@ import 'dart:convert';
 const API_URL = "https://todoapp-api-pyq5q.ondigitalocean.app";
 const API_KEY = "2affb471-1ed0-4cd9-b5e5-47722b809cb8";
 
-class ApiPage extends StatelessWidget {
-  Widget build(BuildContext context) {
-    return Scaffold();
-  }
-
+class Api {
   static Future<List<TodoItem>> fetchTodo() async {
     http.Response response =
         await http.get(Uri.parse("$API_URL/todos?key=$API_KEY"));
