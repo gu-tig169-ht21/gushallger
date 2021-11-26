@@ -1,10 +1,10 @@
-import 'package:firstapp/api_page.dart';
+import 'package:firstapp/api.dart';
 import 'package:flutter/material.dart';
 
 class TodoItem {
   String attGora;
   bool done = false;
-  String id = "du har överskrivit idt";
+  String id = "du har inte överskrivit idt";
 
   TodoItem({
     required this.attGora,
