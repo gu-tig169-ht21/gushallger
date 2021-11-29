@@ -2,13 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'todo_item.dart';
 
-class ItemList extends StatelessWidget {
+class ItemList extends StatefulWidget {
   final List<TodoItem> list;
 
   ItemList(this.list);
 
+  @override
+  State<ItemList> createState() => _ItemListState();
+}
+
+class _ItemListState extends State<ItemList> {
   Widget build(BuildContext context) {
-    return ListView(children: list.map((sak) => item(context, sak)).toList());
+    return ListView.builder(
+      itemBuilder: (context, index) => item(context, widget.list[index]),
+      itemCount: widget.list.length,
+    );
   }
 
   Widget item(context, sak) {
@@ -17,7 +25,8 @@ class ItemList extends StatelessWidget {
           activeColor: Colors.blue,
           value: sak.done,
           onChanged: (bool? done) {
-            Provider.of<MyState>(context, listen: false).changeState(sak);
+            Provider.of<MyState>(context, listen: false)
+                .changeState(sak, sak.done);
           },
         ),
         title: Text(
