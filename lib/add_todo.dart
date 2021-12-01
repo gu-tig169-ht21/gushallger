@@ -33,7 +33,7 @@ class AddTodoState extends State<AddTodo> {
   }
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("Lägg till Todo"), actions: [
+        appBar: AppBar(title: const Text("Lägg till Todo"), actions: [
           TextButton(
               onPressed: () {
                 Navigator.pop(context,
